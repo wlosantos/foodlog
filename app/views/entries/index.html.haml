@@ -7,7 +7,8 @@
       .card
         %header.card-header
           %p.card-header-title
-            = entry.meal_type
+            = entry.meal_type + ': '
+            = entry.category.title if entry.category.present?
         .card-content
           .content
             %p

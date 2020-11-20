@@ -5,7 +5,8 @@
   .column.is-one-third
     %nav.panel.is-link
       %p.panel-heading
-        = @entry.meal_type
+        = @entry.meal_type + ': '
+        = @entry.category.title
       .panel-block
         Calories: #{@entry.calories}
       .panel-block
