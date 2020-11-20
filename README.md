@@ -1,6 +1,6 @@
 ## Foodlog
 
-![foodlog](/home/wendellopes/Imagens/Captura de tela de 2020-11-20 16-53-33.png)
+![foodlog](https://github.com/wlosantos/foodlog/blob/main/app/assets/images/foodlog.png)
 
 Foodlog é uma página (simples) de registro e acompanhamento diário do nosso consumo nutricional diariamento. Este é um projeto de estudo e desenvolvimento web feito na linguagem **Ruby on Rails 6**, com base no tutorial do canal [TraversyMedia](https://www.youtube.com/watch?v=B3Fbujmgo60) onde se busca o aprimoramento do desenvolvimento com esta linguagem. Com este projeto pude ampliar o conhecimento em tabelas relacionais, criação, edição e exclusão de dados, além de amplicar o conhecimento de estilização da página com o framework **Bulma CSS**. 
 
