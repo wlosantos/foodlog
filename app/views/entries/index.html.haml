@@ -1,0 +1,31 @@
+- content_for :title do
+  Footlog &ndash; #{DateTime.now.to_s(:nice_date)}
+
+.columns.mt-6.is-centered
+  - @entries.each do |entry|
+    .column.is-one-quarter
+      .card
+        %header.card-header
+          %p.card-header-title
+            = entry.meal_type
+        .card-content
+          .content
+            %p
+              %span.has-text-weight-bold #{entry.calories}
+              calories
+            %p
+              %span.has-text-weight-bold #{entry.proteins}
+              graims protein
+            %p
+              %span.has-text-weight-bold #{entry.carbohidrates}
+              graims of carbohidrates
+            %p
+              %span.has-text-weight-bold #{entry.fats}
+              graims of fat
+            %p
+              %i
+                %small Logget #{time_ago_in_words(entry.created_at)} ago
+        .card-footer
+          = link_to 'Show', entry, class: 'card-footer-item'
+          = link_to 'Edit', edit_entry_path(entry), class: 'card-footer-item'
+          = link_to 'Destroy', entry, method: :delete, data:{confirm: 'Are you sure?'}, class: 'card-footer-item'
