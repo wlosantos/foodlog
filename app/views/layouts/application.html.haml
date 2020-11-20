@@ -11,12 +11,14 @@
   %body
 
     = render 'shared/header'
-    
+
     - if notice.present?
       .notification.is-link.is-light.global-notification
+        .delete
         .notice= notice
     - if alert.present?
       .notification.is-danger.is-light.global-notification
+        .delete
         .alert= alert
 
     %section.section

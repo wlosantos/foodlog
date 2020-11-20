@@ -1,0 +1,33 @@
+= form_with(model: entry, local: true) do |form|
+  -if entry.errors.any?
+    .notification.is-ligth.is-danger.message
+      .message-header
+        %p= pluralize(entry.errors.count, "error") + 'prohibited this entry from being saved:'
+      .message-body
+        %ul
+          - entry.errors.full_messages.each do |message|
+            %li= message
+
+  .field
+    = form.label :meal_type, class: 'label'
+    .control
+      = form.text_field :meal_type, class: 'input'
+  .field
+    = form.label :calories, class: 'label'
+    .control
+      = form.number_field :calories, class: 'input'
+  .field
+    = form.label :proteins, class: 'label'
+    .control
+      = form.number_field :proteins, class: 'input'
+  .field
+    = form.label :carbohidrates, class: 'label'
+    .control
+      = form.number_field :carbohidrates, class: 'input'
+  .field
+    = form.label :fats, class: 'label'
+    .control
+      = form.number_field :fats, class: 'input'
+  .field
+    .control
+      = form.submit class: 'button is-success'
