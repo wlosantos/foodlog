@@ -1,7 +1,7 @@
 !!! 5
 %html
   %head
-    %title Base Config
+    %title foodlog
     = csrf_meta_tags
     = csp_meta_tag
 
@@ -9,4 +9,16 @@
     = javascript_pack_tag 'application', { :data => {:turbolinks => {:track => 'reload'}}}
 
   %body
-    = yield
+
+    = render 'shared/header'
+    
+    - if notice.present?
+      .notification.is-link.is-light.global-notification
+        .notice= notice
+    - if alert.present?
+      .notification.is-danger.is-light.global-notification
+        .alert= alert
+
+    %section.section
+      .container
+        = yield
