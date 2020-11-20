@@ -1,6 +1,6 @@
 = form_with(model: entry, local: true) do |form|
   -if entry.errors.any?
-    .notification.is-ligth.is-danger.message
+    .is-ligth.is-danger.message
       .message-header
         %p= pluralize(entry.errors.count, "error") + 'prohibited this entry from being saved:'
       .message-body

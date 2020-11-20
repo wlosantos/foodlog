@@ -1,5 +1,5 @@
-.columns.is-centered.mt-3
-  .column.is-half
+.columns.is-centered.mt-2
+  .column.is-half.mb-10
     - @entries.each do |day, entries|
       %h3.is-size-4.has-text-weight-bold.has-text-centered Entries for #{day}
 
@@ -35,3 +35,5 @@
                 #{entry.proteins}g proteins,
                 #{entry.carbohidrates}g carbs,
                 #{entry.fats}g fat
+
+      %br

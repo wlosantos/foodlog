@@ -3,7 +3,7 @@ class EntriesController < ApplicationController
   before_action :set_entry, only: [:show, :edit, :update, :destroy]
 
   def index
-    @entries = Entry.all
+    @entries = Entry.where("created_at >= ?", Date.today)
   end
 
   def show
