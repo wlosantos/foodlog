@@ -1,0 +1,24 @@
+= content_for :title do
+  #{@entry.meal_type} &ndash; #{DateTime.now.to_s(:nice_date)}
+
+.columns.is-centered.mt-3
+  .column.is-one-third
+    %nav.panel.is-link
+      %p.panel-heading
+        = @entry.meal_type
+      .panel-block
+        Calories: #{@entry.calories}
+      .panel-block
+        Proteins: #{@entry.proteins}
+      .panel-block
+        Carbohidrates: #{@entry.carbohidrates}
+      .panel-block
+        Fats: #{@entry.fats}
+
+    .columns.is-mobile
+      .column
+        = link_to 'Edit', edit_entry_path(@entry), class: 'button is-gray'
+        = link_to 'Delete', entry_path(@entry), method: :delete, class: 'button -is-warning', data: {confirm: 'Are you sure?'}
+-#
+-# <%= link_to 'Edit', edit_entry_path(@entry) %> |
+-# <%= link_to 'Back', entries_path %>
