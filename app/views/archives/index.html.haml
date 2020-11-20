@@ -1,0 +1,37 @@
+.columns.is-centered.mt-3
+  .column.is-half
+    - @entries.each do |day, entries|
+      %h3.is-size-4.has-text-weight-bold.has-text-centered Entries for #{day}
+
+      %nav.level.is-mobile.mt-3
+        .level-item.has-text-centered
+          %div
+            %p.heading Calories
+            %p.title #{entries.pluck(:calories).sum}
+
+        .level-item.has-text-centered
+          %div
+            %p.heading Proteins
+            %p.title #{entries.pluck(:proteins).sum}g
+
+        .level-item.has-text-centered
+          %div
+            %p.heading Carbohydrates
+            %p.title #{entries.pluck(:carbohidrates).sum}g
+
+        .level-item.has-text-centered
+          %div
+            %p.heading Fats
+            %p.title #{entries.pluck(:fats).sum}g
+
+      - entries.each do |entry|
+        = link_to entry_path(entry) do
+          .card
+            .card-content
+              .content
+                %strong #{entry.meal_type}
+                %br
+                #{entry.calories} calories,
+                #{entry.proteins}g proteins,
+                #{entry.carbohidrates}g carbs,
+                #{entry.fats}g fat
